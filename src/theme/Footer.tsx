@@ -10,28 +10,16 @@ const footerData = {
       title: 'Developers',
       links: [
         {
-          label: 'Dev Chat',
-          href: 'https://discord.com/invite/uniswap',
-        },
-        {
-          label: 'Concepts',
-          href: '/concepts/overview',
-        },
-        {
-          label: 'Contracts',
-          href: '/contracts/v4/overview',
-        },
-        {
-          label: 'SDKs',
-          href: '/sdk/v4/overview',
-        },
-        {
-          label: 'APIs',
-          href: '/api/subgraph/overview',
-        },
-        {
           label: 'Whitepaper',
           href: 'https://app.uniswap.org/whitepaper-v4.pdf',
+        },
+        {
+          label: 'Bug Bounty',
+          href: 'https://immunefi.com/bounty/uniswap/',
+        },
+        {
+          label: 'Token Lists',
+          href: 'https://tokenlists.org/token-list?url=https://ipfs.io/ipns/tokens.uniswap.org',
         },
       ],
     },
@@ -47,33 +35,12 @@ const footerData = {
           href: 'https://www.uniswapfoundation.org/governance',
         },
         {
-          label: 'Blog',
-          href: 'https://blog.uniswap.org/',
-        },
-      ],
-    },
-    {
-      title: 'Company',
-      links: [
-        {
-          label: 'Careers',
-          href: 'https://boards.greenhouse.io/uniswaplabs',
-        },
-        {
-          label: 'Brand Assets',
+          label: 'Brand Asset',
           href: 'https://github.com/Uniswap/brand-assets/raw/main/Uniswap%20Brand%20Assets.zip',
         },
         {
-          label: 'Terms of Service',
-          href: 'https://support.uniswap.org/hc/en-us/articles/30935100859661-Uniswap-Labs-Terms-of-Service',
-        },
-        {
-          label: 'Privacy Policy',
-          href: 'https://support.uniswap.org/hc/en-us/articles/30934457771405-Uniswap-Labs-Privacy-Policy',
-        },
-        {
-          label: 'Trademark Policy',
-          href: 'https://support.uniswap.org/hc/en-us/articles/30934762216973-Uniswap-Labs-Trademark-Guidelines',
+          label: 'Analytics',
+          href: 'https://info.uniswap.org/',
         },
       ],
     },
@@ -81,12 +48,16 @@ const footerData = {
       title: 'Need Help?',
       links: [
         {
-          label: 'Help Center',
-          href: 'https://support.uniswap.org/',
+          label: 'Request an Update',
+          href: 'https://portal.usepylon.com/uniswap-foundation/forms/uniswap-foundation-documentation-updates',
+        },
+        {
+          label: 'Developer Chat',
+          href: 'https://discord.com/invite/uniswap',
         },
         {
           label: 'Contact Us',
-          href: 'https://support.uniswap.org/hc/en-us/requests/new',
+          href: 'https://portal.usepylon.com/uniswap-foundation/forms/uniswap-foundation-developer-support',
         },
       ],
     },
@@ -102,21 +73,18 @@ const Footer: FC = () => {
       <h2 className="sr-only">Footer</h2>
       <div className="default-grid sm:mb-20">
         <div className="mb-12 hidden items-start sm:col-span-8 sm:flex md:col-span-4 md:mb-0">
-          <LinkBase href="/" className="flex flex-row items-center">
-            <MiniUnicon color="neutral-1" className="mb-[0.1875rem] h-8 w-8" />
-            <p className="body-1 ml-2 text-light-neutral-1 dark:text-dark-neutral-1">Uniswap Labs</p>
-          </LinkBase>
+          {}
         </div>
-        <div className="col-span-4 sm:col-span-8 sm:flex sm:grid-cols-8 md:col-span-4">
-          <nav className="grid w-full grid-cols-2 gap-gap-large sm:grid-cols-4">
+        <div className="col-span-4 sm:col-span-8 sm:flex sm:grid-cols-8 md:col-span-4 justify-end">
+          <nav className="grid w-full grid-cols-3 gap-gap-large sm:grid-cols-3 justify-items-end">
             {footerData.footerLinks && footerData.footerLinks.length > 0 ? (
               <>
                 {footerData.footerLinks.map((section) => (
-                  <div key={section.title} className="space-y-[0.3125rem]">
+                  <div key={section.title} className="space-y-[0.3125rem] text-right">
                     <h3 className="body-1 text-light-neutral-1 dark:text-dark-neutral-1">{section.title}</h3>
-                    <ul>
+                    <ul className="text-right">
                       {section.links.map((link) => (
-                        <li key={link.label}>
+                        <li key={link.label} className="text-right">
                           <TextButton
                             textClassName="body-2 text-light-neutral-2 dark:text-dark-neutral-2 group-hover:text-light-neutral-1 group-hover:dark:text-dark-neutral-1 transition-colors"
                             href={link.href}
@@ -134,7 +102,7 @@ const Footer: FC = () => {
       </div>
       <div className="flex flex-col-reverse border-light-surface-3 dark:border-dark-surface-3 sm:flex-row sm:items-center sm:justify-between sm:border-t sm:pt-padding-large">
         <p className="body-3 my-padding-large text-light-neutral-2 dark:text-dark-neutral-2 sm:my-0">
-          @{new Date().getFullYear()} Uniswap Labs
+          @{new Date().getFullYear()} Uniswap
         </p>
         <div className="flex flex-row space-x-gap-large border-b border-light-surface-3 px-2 py-margin-web dark:border-dark-surface-3 sm:border-0 sm:px-0 sm:py-0">
           {footerData?.footerGithubLink ? (

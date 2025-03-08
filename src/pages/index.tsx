@@ -252,8 +252,6 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="divider" />
-
         <div className="ConnectBlock pt-padding-x-large">
           <h3 className="heading-2 text-light-neutral-1 dark:text-dark-neutral-1">{connectBlock.title}</h3>
           <div className="default-grid mt-margin-mobile sm:mt-padding-x-large">
@@ -298,7 +296,7 @@ const Home = () => {
                   decentralization, and sustainability of the Uniswap community.
                 </p>
               </div>
-              <div className="flex mt-5">
+              <div className="flex mt-10">
                 <Link
                   className="group flex items-center justify-center rounded-large bg-light-surface-3 p-3 transition hover:bg-light-surface-3-hovered dark:bg-dark-surface-3 dark:hover:bg-dark-surface-3-hovered"
                   to="https://unigrants.org/"
@@ -310,8 +308,8 @@ const Home = () => {
                 </Link>
               </div>
             </div>
-            <div className="relative flex justify-center col-span-full md:col-span-4 min-h-[50vw] md:min-h-[25vw]">
-              <img src={UPG} className="absolute md:right-0 p-8" />
+            <div className="relative flex justify-end items-start col-span-full md:col-span-4 min-h-[200px] md:min-h-[200px] pt-0">
+              <img src={UPG} className="h-full max-h-[220px] object-contain p-4 mr-8 mt-4" />
             </div>
           </div>
         </div>
